@@ -5,112 +5,220 @@
 	border: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Rubik', 'Arial',sans-serif;
 	line-height: 1.6;
 	color: #000;
-	height: 100vh;
-	width: 100vw;
 }
 
-.container {
-	height: 100%;
-	width: 100%;
-
-	overflow-y:scroll;
-	scroll-behavior: smooth;
-}
-
+/*navbar*/
 .navbar {
-	position:fixed;
-	z-index: 6;
-	display: flex;
-	width: 100%;
-	margin-top: 2rem;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 2;
 }
 
-.navbar ul {
+.toggler {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem; 
+	width: 4rem;
+	height: 4rem;
+	z-index: 3;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.hamburger {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	width: 4rem;
+	height: 4rem;
+	z-index: 2;
 	display: flex;
-	list-style: none;
-	width:100%;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background: #111;
+}
+
+.hamburger > div {
+	position: absolute;
+	width: 60%;
+	height: 3px;
+	border-radius: 1.5px;
+	background-color: #fff44f;
+	transition: all 0.4s ease;
+}
+
+/*Burger lines*/
+.hamburger > div:before,
+.hamburger > div:after  {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	border-radius: 1.5px;
+	background-color: inherit;
+	top: -10px;
+}
+
+.hamburger > div:after {
+	top: 10px;
+}
+
+/*Animate*/
+.toggler:checked + .hamburger>div{
+	transform: rotate(135deg);
+}
+
+.toggler:checked + .hamburger>div:before, 
+.toggler:checked + .hamburger>div:after{
+	top: 0;
+	transform: rotate(90deg);
+}
+
+.toggler:checked:hover + .hamburger>div{
+	transform: rotate(225deg);
+}
+
+
+/*show menu*/
+.menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	display: flex;
+	align-items: center;
 	justify-content: center;
 }
 
-.navbar ul li {
-	margin: 0 1rem;
-	padding: 1rem;
+.menu > div {
+    width: 200vw;
+    height: 200vh;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    transform: scale(0);
 }
 
-.navbar ul li a {
+.menu > div > div{
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+.menu > div >div > ul > li {
+	list-style: none;
+	color: #fff;
 	font-size: 1.5rem;
+	padding:1rem;
+}
+
+.menu > div >div > ul > li > a{
+	color: inherit;
 	text-decoration: none;
-	text-transform: uppercase;
-	color: #000;
+	transition: color 0.4s ease;
 }
 
-.navbar ul li  a:hover{
-	color:#F5F5F5;
-	text-shadow: 2px 2px #000;
+
+/*show menu*/
+.toggler:checked ~ .menu{
+	visibility: visible;
 }
 
-/*Sections*/
+.toggler:checked ~ .menu > div{
+	transform: scale(1);
+	transition-duration: 0.75s;
+}
+
+.toggler:checked ~ .menu > div > div{
+	opacity: 1;
+}
+
+
+
+/*Section global*/
 section {
 	display: flex;
 	width: 100%;
-	height: 95vh;
-	position: relative;
+	height: 800px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-section:after {
+/*section:after {
+	content: '';
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	content: '';
 	background: inherit;
 	z-index: -1;
 	transform-origin: top left;
 	transform:skewY(3deg);
-}
+}*/
 
 
-section .content {
+/*section .content {
 	display: flex;
-	width: 100%;
+	flex-direction: column;
 	justify-content: center;
-
+	width: 100%;
+	z-index: 1;
 }
 
+*/
 
 /*Home*/
 section#home {
 	background: #BB3F2F;
-	z-index: 5;
+	/*z-index: 5;*/
 }
 
-.content #banner{
+/*.content #banner{
 	align-self: center;
-}
-
-#banner a {
-	background: #CAB6A5;
 	text-align: center;
+	margin-top: 10rem;
+}
+*/
+/*#banner a {
+	background: #CAB6A5;
 	color: #fff;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	border-radius: 2.5rem;
-	padding: 1.5rem;
+	padding: 1rem;
 	text-decoration: none;
 	transition: .3s;
 	display: inline-block;
+	margin-top: 1rem;
+}*/
+/*
+a#btn {
+	padding-top: 1rem;
 }
 
 #banner a:hover {
 	border: 1px solid #3498db;
 	background: none;
 	transform: scale(1.1);
-}
-
+}*/
+/*
 #banner h1 {
-	font-size: 5rem;
+	font-size: 2rem;
 	font-weight: bold;
 	color:#fff;
 }
@@ -123,23 +231,35 @@ span#name {
 
 .content #profile-pic{
 	align-self: center;
-	margin-top: 15rem;
+	margin-top: 6rem;
 }
-
+*/
 
 /*About*/
 section#about {
 	background-color: #f5f5f5;
-	z-index: 4;
+	/*z-index: 4;*/
 }
 
 section#projects {
 	background-color: #4F6FC3;
-	z-index: 3;
+	/*z-index: 3;*/
 }
 
 section#contact {
 	background-color: #fff;
-	z-index: 2;
+	/*z-index: 2;*/
 }
 
+
+@media (min-width: 620px){
+
+}
+
+@media (min-width: 960px){
+	
+}
+
+@media (min-width: 1200px){
+	
+}
