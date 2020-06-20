@@ -331,7 +331,7 @@ span#name {
 
 /*Projects*/
 #projects {
-	height: 1300px;
+	height: 3500px;
 	background-color: #f5f5f5;
 }
 #projects .content-4 {
@@ -339,25 +339,57 @@ span#name {
 	width: 100%;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 5rem;
+	margin-top: 3rem;
 }
 
 #projects .card {
-	width: 310px;
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 1rem;
-	margin-bottom: 0.5rem;
-	margin-top: 3rem;
-	text-align: center;
+	display: grid;
+	grid-template-columns: 20rem;
+	grid-template-rows: 15rem 5rem 20rem;
+	grid-template-areas: "image" "header" "body";
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+	border-radius: 1.1rem;
+	margin:1rem;
 }
 
-#projects .card .card-header {
+#projects .card-image {
+	grid-area: image;
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+	/*background-size: cover;*/
+}
+
+#projects .card-header {
+	grid-area: header;
 	text-align: center;
-	padding: 4rem 0.5rem;
-	border-radius: 1rem;
-	background:linear-gradient(to right, #ff416c, #ff4b2b);
-	color: #fff;
+	margin-top: 1rem;
+}
+
+
+#projects .card-body {
+	grid-area: body;
+	margin:0.5rem;
+	padding: 1rem;
+}
+
+#project-1 {
+	/*background: url('../img/rca.png');*/
+}
+
+#project-2 {
+	background: url('../img/rca.PNG') no-repeat center/cover;
+}
+
+#project-3 {
+	/*background: url('../img/rca.png');*/
+}
+
+#project-4 {
+	background: url('../img/blogapp.PNG') no-repeat center/cover;
+}
+
+#project-5 {
+	background: url('../img/parkinlot.png') no-repeat center;
 }
 
 

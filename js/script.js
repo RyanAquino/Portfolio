@@ -9,18 +9,3 @@ function hideMenu(){
 
 window.addEventListener("scroll", hideMenu);
 
-
-
-// Smooth scroll ios
-// let viewWorkBtn = document.querySelector('#btn');
-
-// function scrollTo() {
-// 	let projectSection = document.querySelector('#projects');
-// 	projectSection.scrollIntoView({behavior: "smooth"});
-
-// }
-// viewWorkBtn.addEventListener('click', scrollTo);
-
-
-
-
