@@ -91,7 +91,7 @@ body {
 
 
 /*show menu*/
-.menu{
+.menu {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -135,7 +135,6 @@ body {
 	transition: color 0.4s ease;
 }
 
-
 /*show menu*/
 .toggler:checked ~ .menu{
 	visibility: visible;
@@ -174,7 +173,7 @@ section:after {
 	z-index: 2;
 }
 
-/*Home*/
+/*Home section*/
 #home .content-1 {
 	display: flex;
 	width: 100%;
@@ -226,11 +225,16 @@ span#name {
 	margin-top: 4rem;
 }
 
+#profile-pic .profile_laptop {
+	display: none;
+}
 
-/*About*/
+
+/*About section*/
 #about {
 	background-color: #f6f6f6;
 }
+
 #about .content-2 {
 	display: flex;
 	width: 100%;
@@ -245,7 +249,18 @@ span#name {
 	padding-top: 2rem;
 }
 
-/*skills*/
+.cert_tablet,
+.cert_laptop {
+	display: none;
+}
+
+.cert_tablet:hover,
+.cert_laptop:hover {
+	transition: 0.5s;
+	transform: scale(1.1);
+}
+
+/*Skills section*/
 #skills {
 	height: 700px;
 	background-color: #499DCE;
@@ -260,7 +275,7 @@ span#name {
 	color: #fff;
 }
 
-#skills .skills-item	{
+#skills .skills-item {
 	width: 80%;
 }
 
@@ -328,12 +343,12 @@ span#name {
 	}
 }
 
-
-/*Projects*/
+/*Projects section*/
 #projects {
 	height: 3500px;
 	background-color: #f5f5f5;
 }
+
 #projects .content-4 {
 	display: flex;
 	width: 100%;
@@ -382,7 +397,7 @@ span#name {
 }
 
 #project-image-2 {
-	background: url('../img/rca.PNG') no-repeat center/cover;
+	background: url('../img/rca.webp') no-repeat center/cover;
 }
 
 #project-image-3 {
@@ -390,15 +405,15 @@ span#name {
 }
 
 #project-image-4 {
-	background: url('../img/blogapp.PNG') no-repeat center/cover;
+	background: url('../img/blogapp.webp') no-repeat center/cover;
 }
 
 #project-image-5 {
-	background: url('../img/parkinlot.png') no-repeat center;
+	background: url('../img/parkinlot.webp') no-repeat center;
 }
 
 
-/*contact*/
+/*contact section*/
 #contact {
 	background-color: #BB3F2F;
 }
@@ -412,7 +427,7 @@ span#name {
 	color: #fff;
 }
 
-.sub-headline {
+#contact .sub-headline {
 	padding: 2rem;
 	text-align: center;
 }
@@ -430,22 +445,27 @@ footer {
 	padding: 0.5rem;
 }
 
+#contact ul li a{
+	text-decoration: none;
+	color: #fff;
+	align-self: center;
+}
+
 /*social media icons*/
 .facebook {
     background: url('../img/fb.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
-    display: block;
+    display: inline-block;
     transition: 0.5s ease;
     cursor: pointer;
 }
-
 
 .linkedin {
     background: url('../img/linkedin.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
-    display: block;
+    display: inline-block;
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -454,7 +474,7 @@ footer {
     background: url('../img/github.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
-    display: block;
+    display: inline-block;
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -463,7 +483,7 @@ footer {
     background: url('../img/email.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
-    display: block;
+    display: inline-block;
     transition: 0.5s ease;
     cursor: pointer;
 }
@@ -476,17 +496,6 @@ footer {
 }
 
 
-
-
-.cert_tablet,
-.profile_laptop {
-	display: none;
-}
-
-.cert_tablet:hover {
-	transition: 0.5s;
-	transform: scale(1.1);
-}
 
 
 /*Media queries*/
@@ -539,7 +548,7 @@ footer {
 
 	/*projects*/
 	#projects {
-		height: 2150px;
+		height: 2200px;
 	}
 
 	#projects .cards {
@@ -549,7 +558,7 @@ footer {
 	}
 
 	#projects .card {
-		margin: 1rem;
+		margin: 1.5rem;
 	}
 
 	/*contact*/
@@ -559,7 +568,7 @@ footer {
 
 }
 
-@media (min-width: 1056px){
+@media (min-width: 1104px){
 	.content h1{
 		font-size: 2.5rem;
 	}
@@ -569,12 +578,25 @@ footer {
 		font-size: 3rem;
 	}
 
-	.profile_laptop {
+	.cert_laptop {
 		display: inline-block;
 	}
 
-	.profile {
+	.cert_tablet {
 		display: none;
+	}
+
+	#profile-pic .profile_laptop {
+		display: inline-block;
+	}
+
+	#profile-pic .profile {
+		display: none;
+	}
+
+	/*about*/
+	#about .about-item {
+		padding: 1rem 20rem;
 	}
 	
 	/*projects*/
@@ -595,7 +617,7 @@ footer {
 		margin-top: 8rem;
 	}
 	#about .about-item {
-		padding: 2rem 30rem;
+		padding: 2rem 35rem;
 	}
 
 	#about .about-item {

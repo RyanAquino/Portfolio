@@ -4,8 +4,6 @@ let project3 = document.querySelector('#project-3');
 let project4 = document.querySelector('#project-4');
 let project5 = document.querySelector('#project-5');
 
-
-
 window.addEventListener('scroll', hideMenu);
 
 project4.addEventListener('click', goToURL);
