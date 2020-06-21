@@ -347,9 +347,15 @@ span#name {
 	grid-template-columns: 20rem;
 	grid-template-rows: 15rem 5rem 20rem;
 	grid-template-areas: "image" "header" "body";
-	box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.7);
 	border-radius: 1.1rem;
 	margin-top: 1.5rem;
+	transition: 0.5s ease;
+	cursor: pointer;
+}
+
+#projects .card:hover {
+	transform: scale(1.1);
 }
 
 #projects .card-image {
@@ -371,23 +377,23 @@ span#name {
 	padding: 1rem;
 }
 
-#project-1 {
+#project-image-1 {
 	/*background: url('../img/rca.png');*/
 }
 
-#project-2 {
+#project-image-2 {
 	background: url('../img/rca.PNG') no-repeat center/cover;
 }
 
-#project-3 {
+#project-image-3 {
 	/*background: url('../img/rca.png');*/
 }
 
-#project-4 {
+#project-image-4 {
 	background: url('../img/blogapp.PNG') no-repeat center/cover;
 }
 
-#project-5 {
+#project-image-5 {
 	background: url('../img/parkinlot.png') no-repeat center;
 }
 
@@ -430,18 +436,18 @@ footer {
     height: 4rem;
     width: 4rem;
     display: block;
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
-.facebook:hover {
-	background-color: red;
-    transition: all 1s;
-}
 
 .linkedin {
     background: url('../img/linkedin.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
     display: block;
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .github {
@@ -449,6 +455,8 @@ footer {
     height: 4rem;
     width: 4rem;
     display: block;
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
 .email {
@@ -456,26 +464,70 @@ footer {
     height: 4rem;
     width: 4rem;
     display: block;
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
+.facebook:hover,
+.linkedin:hover,
+.github:hover,
+.email:hover {
+	transform: scale(1.3);
+}
+
+
+
+
+.cert_tablet,
+.profile_laptop {
+	display: none;
+}
+
+.cert_tablet:hover {
+	transition: 0.5s;
+	transform: scale(1.1);
+}
 
 
 /*Media queries*/
 
 /*Tablet size*/
-@media (min-width: 700px){
+@media (min-width: 768px){
 	.content h1{
 		font-size: 2rem;
 	}
+
 	/*home*/
+	#banner {
+		text-align: left;
+	}
+
+	#banner h1{
+		font-size: 2.5rem;
+	}
+
 	#home .content-1 {
 		flex-direction: row;
 	}
+
+	/*about*/
 	#about .about-item {
 		padding: 1rem 10rem;
+		font-size: 1.2rem;
+	}
+
+	#about .content-2 {
+		margin-top: 4rem;
 	}
 
 
+	.cert_tablet {
+		display: inline-block;
+	}
+
+	.cert {
+		display: none;
+	}
 	
 	/*skills*/
 	#skills {
@@ -485,10 +537,9 @@ footer {
 		width: 80%;
 	}
 
-
 	/*projects*/
 	#projects {
-		height: 2100px;
+		height: 2150px;
 	}
 
 	#projects .cards {
@@ -501,7 +552,6 @@ footer {
 		margin: 1rem;
 	}
 
-
 	/*contact*/
 	#contact ul li {
 		display: inline-block;
@@ -509,53 +559,59 @@ footer {
 
 }
 
-@media (min-width: 1200px){
-
-	#about .about-item {
-		padding: 2rem 20rem;
-	}
-
-	#banner h1 {
-		font-size: 3rem;
-	}
-	#projects {
-		height: 1450px;
-	}
-
+@media (min-width: 1056px){
 	.content h1{
 		font-size: 2.5rem;
 	}
+
+	/*home*/
+	#banner h1 {
+		font-size: 3rem;
+	}
+
+	.profile_laptop {
+		display: inline-block;
+	}
+
+	.profile {
+		display: none;
+	}
+	
+	/*projects*/
+	#projects {
+		height: 1500px;
+	}
 }
 
-@media (min-width: 1800px){
-
-	#banner {
-		text-align: left;
-	}
+@media (min-width: 1760px){
+	
+	/*home*/
 	#banner h1 {
 		font-size: 5rem;
 	}
 
-	#about .about-item {
-		padding: 2rem 40rem;
+	/*about*/
+	#about .content-2 {
+		margin-top: 8rem;
 	}
-
-	#about {
-		height: 700px;
+	#about .about-item {
+		padding: 2rem 30rem;
 	}
 
 	#about .about-item {
 		font-size: 1.3rem;
 	}
 
+	/*skills*/
 	#skills {
 		height: 800px;
 	}
 
 	#skills .skills-item {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 	}
-
+	
+	/*projects*/
 	#projects {
 		height: 900px;
 	}
@@ -563,5 +619,4 @@ footer {
 	#projects .content-4 {
 		margin-top: 8rem;
 	}
-
 }
