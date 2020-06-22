@@ -257,7 +257,7 @@ span#name {
 .cert_tablet:hover,
 .cert_laptop:hover {
 	transition: 0.5s;
-	transform: scale(1.1);
+	/*transform: scale(1.1);*/
 }
 
 /*Skills section*/
@@ -393,7 +393,7 @@ span#name {
 }
 
 #project-image-1 {
-	/*background: url('../img/rca.png');*/
+	background: url('../img/projects/jira middleware.png') no-repeat center;
 }
 
 #project-image-2 {
@@ -401,7 +401,7 @@ span#name {
 }
 
 #project-image-3 {
-	/*background: url('../img/rca.png');*/
+	background: url('../img/projects/patching scheduler.png') no-repeat center;
 }
 
 #project-image-4 {
