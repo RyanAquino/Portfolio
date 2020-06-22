@@ -285,62 +285,44 @@ span#name {
 	padding-left: 1rem;
 }
 
-#skills .line:before {
-	content: '';
+#skills .skill-bar {
+	height: 2rem;
+	background-color: #dddddd;
+	border-radius: 0.5rem;
 	width: 100%;
-	position: absolute;
-	left: 0;
-	top:0;
-	height: 1.5rem;
-	z-index: -2;
-	background-color: #eeeeee;
-	border-radius: 3rem;
+	position: relative;
 }
 
-#skills .line:after {
-	content: '';
+.skill-bar .skill-1,
+.skill-bar .skill-2,
+.skill-bar .skill-3,
+.skill-bar .skill-4,
+.skill-bar .skill-5,
+.skill-bar .skill-6,
+.skill-bar .skill-7,
+.skill-bar .skill-8,
+.skill-bar .skill-9 {
+	height: 2rem;
 	background-color: #264875;
-	height: 1.5rem;
-	transition: 0.8s;
-	display: block;
-	width: 100%;
-	animation: animate 1 2s;
+	border-radius: 0.5rem;
+	width: 0%;
+	transition: width 1s linear;
+}
+
+.skill-bar .skill-1:before,
+.skill-bar .skill-2:before,
+.skill-bar .skill-3:before,
+.skill-bar .skill-4:before,
+.skill-bar .skill-5:before,
+.skill-bar .skill-6:before,
+.skill-bar .skill-7:before,
+.skill-bar .skill-8:before,
+.skill-bar .skill-9:before {
+	content: attr(percent);
 	position: absolute;
-	top: 0;
-	left:0;
-	z-index: -1;
-	border-radius: 3rem;
-}
-
-#skills .line-1:after,
-#skills .line-2:after,
-#skills .line-3:after,
-#skills .line-5:after {
-	max-width: 80%;
-}
-
-#skills .line-4:after {
-	max-width: 90%;
-}
-
-#skills .line-6:after,
-#skills .line-7:after,
-#skills .line-9:after {
-	max-width: 70%;
-}
-
-#skills .line-8:after {
-	max-width: 50%;
-}
-
-@keyframes animate {
-	0% {
-		width: 0%;	
-	}
-
-	100% {
-		width: 100%;
-	}
+	color: #000;
+	right: 0.1rem;
+	padding-top: 0.2rem;
 }
 
 /*Projects section*/
@@ -355,6 +337,17 @@ span#name {
 	flex-direction: column;
 	align-items: center;
 	margin-top: 3rem;
+}
+
+#projects .cards {
+	opacity: 0;
+	transform:translateY(1.5rem);
+	transition: 2.5s all ease;
+}
+
+#projects .cards-appear {
+	opacity: 1;
+	transform: translateY(0px);
 }
 
 #projects .card {
@@ -391,7 +384,6 @@ span#name {
 	margin:0.5rem;
 	padding: 1rem;
 }
-
 #project-image-1 {
 	background: url('../img/projects/jira middleware.png') no-repeat center;
 }
