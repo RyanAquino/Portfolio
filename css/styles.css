@@ -397,7 +397,7 @@ span#name {
 }
 
 #project-image-2 {
-	background: url('../img/rca.webp') no-repeat center/cover;
+	background: url('../img/projects/rca.png') no-repeat center/cover;
 }
 
 #project-image-3 {
@@ -405,11 +405,11 @@ span#name {
 }
 
 #project-image-4 {
-	background: url('../img/blogapp.webp') no-repeat center/cover;
+	background: url('../img/projects/blogapp.png') no-repeat center/cover;
 }
 
 #project-image-5 {
-	background: url('../img/parkinlot.webp') no-repeat center;
+	background: url('../img/projects/parkinlot.png') no-repeat center;
 }
 
 
@@ -453,7 +453,7 @@ footer {
 
 /*social media icons*/
 .facebook {
-    background: url('../img/fb.png') no-repeat center/cover;
+    background: url('../img/icons/fb.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
     display: inline-block;
@@ -462,7 +462,7 @@ footer {
 }
 
 .linkedin {
-    background: url('../img/linkedin.png') no-repeat center/cover;
+    background: url('../img/icons/linkedin.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
     display: inline-block;
@@ -471,7 +471,7 @@ footer {
 }
 
 .github {
-    background: url('../img/github.png') no-repeat center/cover;
+    background: url('../img/icons/github.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
     display: inline-block;
@@ -480,7 +480,7 @@ footer {
 }
 
 .email {
-    background: url('../img/email.png') no-repeat center/cover;
+    background: url('../img/icons/email.png') no-repeat center/cover;
     height: 4rem;
     width: 4rem;
     display: inline-block;
