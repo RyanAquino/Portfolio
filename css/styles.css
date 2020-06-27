@@ -5,10 +5,6 @@
 	border: 0;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
 body {
 	font-family: 'Rubik', 'Arial',sans-serif;
 	line-height: 1.6;

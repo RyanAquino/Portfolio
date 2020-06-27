@@ -1,69 +1,70 @@
-let project1 = document.querySelector('#project-1');
-let project2 = document.querySelector('#project-2');
-let project3 = document.querySelector('#project-3');
-let project4 = document.querySelector('#project-4');
-let project5 = document.querySelector('#project-5');
-let viewWorkBtn = document.querySelector('#btn');
+const project4 = document.querySelector('#project-4');
+const project5 = document.querySelector('#project-5');
+const menuLinks = document.querySelectorAll('.menu a');
+const viewWorkBtn = document.querySelector('#btn');
 
-// let homeMenu = document.querySelector('.home');
-// let aboutMenu = document.querySelector('.about');
-// let projectsMenu = document.querySelector('.projects');
-// let contactMenu = document.querySelector('.contact');
-
-// menu and button smooth scroll ios support
-if(/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-	viewWorkBtn.addEventListener('click', (event) => iosSmoothScroll(event,'.content-4'));
-	// homeMenu.addEventListener('click', (event) => iosSmoothScroll(event,'.content-1'));
-	// aboutMenu.addEventListener('click', (event) => iosSmoothScroll(event,'.content-2'));
-	// projectsMenu.addEventListener('click', (event) => iosSmoothScroll(event,'.content-4'));
-	// contactMenu.addEventListener('click', (event) => iosSmoothScroll(event,'.content-5'));
-}
-
-// scroll events
-window.addEventListener('scroll', hideMenu);
+// events
+viewWorkBtn.addEventListener('click',gotoMenu);
+menuLinks.forEach((link) => link.addEventListener('click',gotoMenu));
+window.addEventListener('scroll', hideOnScroll);
 window.addEventListener('scroll', showProjects);
 window.addEventListener('scroll', showSkills);
-
-// project urls
 project4.addEventListener('click', goToURL);
 project4.url = 'http://laravelblogapp.herokuapp.com/';
-
 project5.addEventListener('click', goToURL);
 project5.url = 'https://www.facebook.com/ParkInLotPH/';
 
 
 // functions
-function iosSmoothScroll(e, section){
+function gotoMenu(e) {
 	e.preventDefault();
-	let position = 0;
+	hideOnScroll();
+	const section = e.currentTarget.getAttribute('href');
 
-	let sectionEl = document.querySelector(section);
-	let projectsPos = sectionEl.getBoundingClientRect().top / 1.050;
+	const targetPos = document.querySelector(section).offsetTop;
+	const startPos = window.pageYOffset;
+	const distance = targetPos - startPos;
+	let start = null;
+	const duration = 1000;
 
-	let scroll = setInterval(() => {
-		position += 15;
-		window.scrollTo(0, position);
+	window.requestAnimationFrame(step);
 
-		if(position >= projectsPos){
-			clearInterval(scroll);
+	function step(timestamp){
+		if(!start) start = timestamp;
+		const progress = timestamp - start;
+		window.scrollTo(0, ease(progress, startPos, distance, duration));
+		if(progress < duration) {
+			window.requestAnimationFrame(step);
 		}
-	},1);
+	}
+
+
+	// cubic easing out
+	// http://gizma.com/easing
+	function ease(t, b, c, d) {
+		t /= d;
+		t--;
+		return c*(t*t*t + 1) + b;
+	}
 }
 
+function hideOnScroll() {
+	const menuOpen = document.querySelector('.toggler').checked;
+
+	if(menuOpen == true){
+		document.querySelector('.toggler').checked = false;
+	}
+}
 
 function goToURL(evt) {
-	let url = evt.currentTarget.url;
+	const url = evt.currentTarget.url;
 	window.open(url)
 }
 
 function showSkills(){
-	let skill1 = document.querySelector('.skill-1');
-	let skill2 = document.querySelector('.skill-2');
-	let skill3 = document.querySelector('.skill-3');
-	let skill4 = document.querySelector('.skill-4');
-
-	let skillsPos = skill1.getBoundingClientRect().top;
-	let screenPos = window.innerHeight / 1.7;
+	const skill1 = document.querySelector('.skill-1');
+	const skillsPos = skill1.getBoundingClientRect().top;
+	const screenPos = window.innerHeight / 1.7;
 
 	if(skillsPos < screenPos){
 		document.querySelector('.skill-1').style.width = '80%';
@@ -79,20 +80,11 @@ function showSkills(){
 }
 
 function showProjects(){
-	let projects = document.querySelector('.cards');
-	let projectsPos = projects.getBoundingClientRect().top;
-	let screenPos = window.innerHeight / 1.5;
+	const projects = document.querySelector('.cards');
+	const projectsPos = projects.getBoundingClientRect().top;
+	const screenPos = window.innerHeight / 1.5;
 
 	if(projectsPos < screenPos){
 		projects.classList.add('cards-appear');
-	}
-
-}
-
-function hideMenu(){
-	let menuOpen = document.querySelector('.toggler').checked;
-
-	if(menuOpen = true){
-		document.querySelector('.toggler').checked = false;
 	}
 }
