@@ -1,31 +1,34 @@
 "use strict";
 
-var project4 = document.querySelector('#project-4');
-var project5 = document.querySelector('#project-5');
-var menuLinks = document.querySelectorAll('.menu a');
-var viewWorkBtn = document.querySelector('#btn'); // events
+var project4 = document.querySelector("#project-4");
+var project5 = document.querySelector("#project-5");
+var project8 = document.querySelector("#project-8");
+var menuLinks = document.querySelectorAll(".menu a");
+var viewWorkBtn = document.querySelector("#btn"); // events
 
 
 if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
 
-viewWorkBtn.addEventListener('click', gotoMenu);
+viewWorkBtn.addEventListener("click", gotoMenu);
 menuLinks.forEach(function (link) {
-  return link.addEventListener('click', gotoMenu);
+  return link.addEventListener("click", gotoMenu);
 });
-window.addEventListener('scroll', hideOnScroll);
-window.addEventListener('scroll', showProjects);
-window.addEventListener('scroll', showSkills);
-project4.addEventListener('click', goToURL);
-project4.url = 'http://laravelblogapp.herokuapp.com/';
-project5.addEventListener('click', goToURL);
-project5.url = 'https://www.facebook.com/ParkInLotPH/'; // functions
+window.addEventListener("scroll", hideOnScroll);
+window.addEventListener("scroll", showProjects);
+window.addEventListener("scroll", showSkills);
+project4.addEventListener("click", goToURL);
+project4.url = "http://laravelblogapp.herokuapp.com/";
+project5.addEventListener("click", goToURL);
+project5.url = "https://www.facebook.com/ParkInLotPH/";
+project8.addEventListener("click", goToURL);
+project8.url = "https://zadala.herokuapp.com/"; // functions
 
 function gotoMenu(e) {
-  e.preventDefault ? e.preventDefault() : e.returnValue = false;
+  e.preventDefault();
   hideOnScroll();
-  var section = e.currentTarget.getAttribute('href');
+  var section = e.currentTarget.getAttribute("href");
   var targetPos = document.querySelector(section).offsetTop;
   var startPos = window.pageYOffset;
   var distance = targetPos - startPos;
@@ -44,7 +47,6 @@ function gotoMenu(e) {
   } // cubic easing out
   // http://gizma.com/easing
 
-
   function ease(t, b, c, d) {
     t /= d;
     t--;
@@ -53,10 +55,10 @@ function gotoMenu(e) {
 }
 
 function hideOnScroll() {
-  var menuOpen = document.querySelector('.toggler').checked;
+  var menuOpen = document.querySelector(".toggler").checked;
 
   if (menuOpen == true) {
-    document.querySelector('.toggler').checked = false;
+    document.querySelector(".toggler").checked = false;
   }
 }
 
@@ -66,29 +68,29 @@ function goToURL(evt) {
 }
 
 function showSkills() {
-  var skill1 = document.querySelector('.skill-1');
+  var skill1 = document.querySelector(".skill-1");
   var skillsPos = skill1.getBoundingClientRect().top;
   var screenPos = window.innerHeight / 1.7;
 
   if (skillsPos < screenPos) {
-    document.querySelector('.skill-1').style.width = '80%';
-    document.querySelector('.skill-2').style.width = '80%';
-    document.querySelector('.skill-3').style.width = '80%';
-    document.querySelector('.skill-4').style.width = '90%';
-    document.querySelector('.skill-5').style.width = '80%';
-    document.querySelector('.skill-6').style.width = '70%';
-    document.querySelector('.skill-7').style.width = '70%';
-    document.querySelector('.skill-8').style.width = '50%';
-    document.querySelector('.skill-9').style.width = '70%';
+    document.querySelector(".skill-1").style.width = "80%";
+    document.querySelector(".skill-2").style.width = "80%";
+    document.querySelector(".skill-3").style.width = "80%";
+    document.querySelector(".skill-4").style.width = "90%";
+    document.querySelector(".skill-5").style.width = "80%";
+    document.querySelector(".skill-6").style.width = "70%";
+    document.querySelector(".skill-7").style.width = "70%";
+    document.querySelector(".skill-8").style.width = "50%";
+    document.querySelector(".skill-9").style.width = "70%";
   }
 }
 
 function showProjects() {
-  var projects = document.querySelector('.cards');
+  var projects = document.querySelector(".cards");
   var projectsPos = projects.getBoundingClientRect().top;
   var screenPos = window.innerHeight / 1.5;
 
   if (projectsPos < screenPos) {
-    projects.classList.add('cards-appear');
+    projects.classList.add("cards-appear");
   }
 }
