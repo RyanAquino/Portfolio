@@ -323,7 +323,7 @@ span#name {
 
 /*Projects section*/
 #projects {
-	height: 3500px;
+	height: 5500px;
 	background-color: #f5f5f5;
 }
 
@@ -358,7 +358,8 @@ span#name {
 }
 
 #projects #project-4,
-#projects #project-5 {
+#projects #project-5,
+#project-8 {
 	cursor: pointer;
 }
 
@@ -402,6 +403,18 @@ span#name {
 
 #project-image-5 {
 	background: url('../img/projects/parkinlot.png') no-repeat center;
+}
+
+#project-image-6 {
+	background: url('../img/projects/OpenERP.png') no-repeat center;
+}
+
+#project-image-7 {
+	background: url('../img/projects/parkinlot.png') no-repeat center;
+}
+
+#project-image-8 {
+	background: url('../img/projects/zadala-logo.png') no-repeat center;
 }
 
 
@@ -540,7 +553,7 @@ footer {
 
 	/*projects*/
 	#projects {
-		height: 2200px;
+		height: 2900px;
 	}
 
 	#projects .cards {
@@ -593,7 +606,7 @@ footer {
 	
 	/*projects*/
 	#projects {
-		height: 1500px;
+		height: 2200px;
 	}
 }
 
@@ -625,12 +638,14 @@ footer {
 		font-size: 1.2rem;
 	}
 	
-	/*projects*/
-	#projects {
-		height: 900px;
-	}
-
 	#projects .content-4 {
 		margin-top: 8rem;
+	}
+}
+
+@media (min-width: 1472px){
+	/*projects*/
+	#projects {
+		height: 1600px;
 	}
 }

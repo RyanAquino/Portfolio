@@ -1,8 +1,8 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 5 version
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
 */
 
 * {
@@ -18,6 +18,9 @@ body {
 	line-height: 1.6;
 	color: #000;
 	background-color: #BB3F2F;
+	/* temporary remove horizontal scroll*/
+	-ms-overflow-style: none;
+	overflow: auto;
 }
 
 /*navbar*/
@@ -412,7 +415,7 @@ span#name {
 
 /*Projects section*/
 #projects {
-	height: 3500px;
+	height: 5500px;
 	background-color: #f5f5f5;
 }
 
@@ -466,7 +469,8 @@ span#name {
 }
 
 #projects #project-4,
-#projects #project-5 {
+#projects #project-5,
+#project-8 {
 	cursor: pointer;
 }
 
@@ -518,6 +522,18 @@ span#name {
 
 #project-image-5 {
 	background: url('../img/projects/parkinlot.png') no-repeat center;
+}
+
+#project-image-6 {
+	background: url('../img/projects/OpenERP.png') no-repeat center;
+}
+
+#project-image-7 {
+	background: url('../img/projects/sop_api.png') no-repeat center;
+}
+
+#project-image-8 {
+	background: url('../img/projects/zadala-logo.png') no-repeat center;
 }
 
 
@@ -682,10 +698,11 @@ footer {
 
 	/*projects*/
 	#projects {
-		height: 2200px;
+		height: 2900px;
 	}
 
 	#projects .cards {
+		width: 100%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -740,7 +757,7 @@ footer {
 	
 	/*projects*/
 	#projects {
-		height: 1500px;
+		height: 2200px;
 	}
 }
 
@@ -772,12 +789,14 @@ footer {
 		font-size: 1.2rem;
 	}
 	
-	/*projects*/
-	#projects {
-		height: 900px;
-	}
-
 	#projects .content-4 {
 		margin-top: 8rem;
+	}
+}
+
+@media (min-width: 1472px){
+	/*projects*/
+	#projects {
+		height: 1600px;
 	}
 }

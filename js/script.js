@@ -1,5 +1,6 @@
 const project4 = document.querySelector('#project-4');
 const project5 = document.querySelector('#project-5');
+const project8 = document.querySelector('#project-8');
 const menuLinks = document.querySelectorAll('.menu a');
 const viewWorkBtn = document.querySelector('#btn');
 
@@ -13,6 +14,8 @@ project4.addEventListener('click', goToURL);
 project4.url = 'http://laravelblogapp.herokuapp.com/';
 project5.addEventListener('click', goToURL);
 project5.url = 'https://www.facebook.com/ParkInLotPH/';
+project8.addEventListener('click', goToURL);
+project8.url = 'https://zadala.herokuapp.com/';
 
 
 // functions
