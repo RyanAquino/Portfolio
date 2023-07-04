@@ -1,7 +1,7 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
 
@@ -415,7 +415,7 @@ span#name {
 
 /*Projects section*/
 #projects {
-	height: 5500px;
+	height: 6100px;
 	background-color: #f5f5f5;
 }
 
@@ -468,9 +468,8 @@ span#name {
 	transition: 0.5s ease;
 }
 
-#projects #project-4,
 #projects #project-5,
-#project-8 {
+#project-8, #project-9 {
 	cursor: pointer;
 }
 
@@ -535,6 +534,13 @@ span#name {
 #project-image-8 {
 	background: url('../img/projects/zadala-logo.png') no-repeat center;
 }
+
+
+#project-image-9 {
+	background: url('../img/projects/extrac.png') no-repeat center;
+}
+
+
 
 
 /*contact section*/
@@ -698,11 +704,10 @@ footer {
 
 	/*projects*/
 	#projects {
-		height: 2900px;
+		height: 3550px;
 	}
 
 	#projects .cards {
-		width: 100%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -794,7 +799,7 @@ footer {
 	}
 }
 
-@media (min-width: 1472px){
+@media (min-width: 1840px){
 	/*projects*/
 	#projects {
 		height: 1600px;
