@@ -323,7 +323,7 @@ span#name {
 
 /*Projects section*/
 #projects {
-	height: 5500px;
+	height: 6100px;
 	background-color: #f5f5f5;
 }
 
@@ -357,9 +357,8 @@ span#name {
 	transition: 0.5s ease;
 }
 
-#projects #project-4,
 #projects #project-5,
-#project-8 {
+#project-8, #project-9 {
 	cursor: pointer;
 }
 
@@ -415,6 +414,10 @@ span#name {
 
 #project-image-8 {
 	background: url('../img/projects/zadala-logo.png') no-repeat center;
+}
+
+#project-image-9 {
+	background: url('../img/projects/extrac.png') no-repeat center;
 }
 
 
@@ -553,7 +556,7 @@ footer {
 
 	/*projects*/
 	#projects {
-		height: 2900px;
+		height: 3550px;
 	}
 
 	#projects .cards {
@@ -643,7 +646,7 @@ footer {
 	}
 }
 
-@media (min-width: 1472px){
+@media (min-width: 1840px){
 	/*projects*/
 	#projects {
 		height: 1600px;
